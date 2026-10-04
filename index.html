@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>AURA-2.2 Security Dashboard</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="sidebar">
+
+        <h2>AURA-2.2</h2>
+
+        <p>API Security Scanner</p>
+
+        <nav>
+            <a href="#">Dashboard</a>
+            <a href="#">Scan Results</a>
+            <a href="#">Evidence</a>
+            <a href="#">Regression</a>
+        </nav>
+
+    </div>
+
+    <main>
+
+        <header>
+            <h1>Security Dashboard</h1>
+            <p>Application Security Monitoring</p>
+        </header>
+
+        <section class="scan-panel">
+
+            <h2>New Security Scan</h2>
+
+            <label for="target">API Target URL</label>
+
+            <input
+                type="url"
+                id="target"
+                placeholder="http://127.0.0.1:8000"
+            >
+
+            <button id="startScanBtn">Start Scan</button>
+
+<p id="scanStatus"></p>
+
+        </section>
+<section class="overview">
+
+            <h2>Security Overview</h2>
+
+            <div class="cards">
+
+                <div class="card">
+                    <h3>Total Findings</h3>
+                    <p>00</p>
+                </div>
+
+                <div class="card">
+                    <h3>BOLA Findings</h3>
+                    <p>00</p>
+                </div>
+
+                <div class="card">
+                    <h3>BFLA Findings</h3>
+                    <p>00</p>
+                </div>
+
+            </div>
+
+        </section>
+<!-- Scan Results Section -->
+
+<section class="results">
+
+    <h2>Scan Results</h2>
+
+    <p>Detected API Security Vulnerabilities</p>
+
+    <!-- Summary Cards -->
+
+    <div class="results-summary">
+
+        <div class="result-card">
+            <h3>Total Endpoints</h3>
+            <p id="totalEndpoints">0</p>
+        </div>
+
+        <div class="result-card">
+            <h3>Endpoints Tested</h3>
+            <p id="testedEndpoints">0</p>
+        </div>
+
+        <div class="result-card">
+            <h3>Potential Vulnerabilities</h3>
+            <p id="vulnerableEndpoints">0</p>
+        </div>
+
+        <div class="result-card">
+            <h3>Passed Checks</h3>
+            <p id="passedEndpoints">0</p>
+        </div>
+
+    </div>
+
+    <!-- Vulnerability Table -->
+
+    <div class="table-container">
+
+        <table>
+
+            <thead>
+                <tr>
+                    <th>Vulnerability</th>
+                    <th>Endpoint</th>
+                    <th>Severity</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+
+            <tbody id="resultsTable">
+
+                <tr>
+                    <td>BOLA</td>
+                    <td>/api/users/{id}</td>
+                    <td>
+                        <span class="high">High</span>
+                    </td>
+                    <td>Pending</td>
+                </tr>
+
+                <tr>
+                    <td>BFLA</td>
+                    <td>/api/admin</td>
+                    <td>
+                        <span class="medium">Medium</span>
+                    </td>
+                    <td>Pending</td>
+                </tr>
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+</section>
+    </main>
+<!-- EVIDENCE SECTION -->
+
+<section class="evidence" id="evidence">
+
+    <h2>Vulnerability Evidence</h2>
+
+    <p class="section-description">
+        Detailed request and response analysis
+    </p>
+
+    <div class="evidence-card">
+
+        <h3>Finding Details</h3>
+
+        <div class="evidence-row">
+            <span>Vulnerability Type</span>
+            <strong>BOLA</strong>
+        </div>
+
+        <div class="evidence-row">
+            <span>Endpoint</span>
+            <strong>GET /api/users/102</strong>
+        </div>
+
+        <div class="evidence-row">
+            <span>Severity</span>
+            <span class="high">High</span>
+        </div>
+
+        <div class="evidence-row">
+            <span>Expected Status</span>
+            <strong>403 Forbidden</strong>
+        </div>
+
+        <div class="evidence-row">
+            <span>Actual Status</span>
+            <strong class="vulnerable">200 OK</strong>
+        </div>
+
+    </div>
+
+    <div class="evidence-card">
+
+        <h3>HTTP Request</h3>
+
+        <pre><code>GET /api/users/102
+Authorization: Bearer TEST_USER_A_TOKEN</code></pre>
+
+        <h3>HTTP Response</h3>
+
+        <pre><code>HTTP/1.1 200 OK
+
+{
+  "user_id": 102,
+  "name": "Test User B"
+}</code></pre>
+
+    </div>
+
+    <div class="evidence-card">
+
+        <h3>Security Analysis</h3>
+
+        <p>
+            The test user accessed a resource belonging
+            to another test user.
+
+            The API should enforce object-level
+            authorization before returning the data.
+        </p>
+
+    </div>
+
+</section>
+<!-- REGRESSION TESTING SECTION -->
+
+<section class="regression" id="regression">
+
+    <h2>Regression Testing</h2>
+
+    <p class="section-description">
+        Verify whether previously detected vulnerabilities have been fixed
+    </p>
+
+    <div class="regression-card">
+
+        <div class="regression-header">
+            <h3>Previous Vulnerability Check</h3>
+            <span class="fixed-status">Fixed</span>
+        </div>
+
+        <div class="regression-details">
+
+            <div class="regression-row">
+                <span>Vulnerability</span>
+                <strong>BOLA</strong>
+            </div>
+
+            <div class="regression-row">
+                <span>Endpoint</span>
+                <strong>GET /api/users/{id}</strong>
+            </div>
+
+            <div class="regression-row">
+                <span>Previous Status</span>
+                <strong class="vulnerable">200 OK</strong>
+            </div>
+
+            <div class="regression-row">
+                <span>Current Status</span>
+                <strong class="safe-status">403 Forbidden</strong>
+            </div>
+
+            <div class="regression-row">
+                <span>Regression Result</span>
+                <strong class="safe-status">Passed</strong>
+            </div>
+
+        </div>
+
+        <button class="regression-button" id="regressionBtn" type="button">
+    Run Regression Test
+</button>
+
+<p id="regressionStatus" aria-live="polite"></p>
+    </div>
+</section>
+<script src="script.js"></script>
+</body>
+
+</html>
