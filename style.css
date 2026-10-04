@@ -1,0 +1,509 @@
+/* AURA-2.2 Dashboard Styling */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #0B1B3A;
+    color: #F5E6CC;
+    min-height: 100vh;
+    display: flex;
+}
+
+/* Sidebar */
+
+.sidebar {
+    width: 250px;
+    min-height: 100vh;
+    background-color: #10284D;
+    padding: 30px 20px;
+    border-right: 1px solid #365985;
+}
+
+.sidebar h2 {
+    color: #F5E6CC;
+    margin-bottom: 10px;
+}
+
+.sidebar p {
+    color: #BFDBFE;
+    font-size: 14px;
+    margin-bottom: 35px;
+}
+
+.sidebar nav {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.sidebar nav a {
+    color: #D1DFF2;
+    text-decoration: none;
+    padding: 12px;
+    border-radius: 8px;
+}
+
+.sidebar nav a:hover {
+    background-color: #254B7A;
+    color: #FFFFFF;
+}
+
+/* Main Dashboard */
+
+main {
+    flex: 1;
+    padding: 40px;
+}
+
+header h1 {
+    color: #F5E6CC;
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+header p {
+    color: #BFDBFE;
+    margin-bottom: 30px;
+}
+
+/* Scan Panel */
+
+.scan-panel {
+    background-color: #16345F;
+    border: 1px solid #365985;
+    padding: 30px;
+    border-radius: 14px;
+    max-width: 750px;
+}
+
+.scan-panel h2 {
+    color: #BFDBFE;
+    margin-bottom: 25px;
+}
+
+.scan-panel label {
+    display: block;
+    color: #F5E6CC;
+    margin-bottom: 10px;
+}
+
+.scan-panel input {
+    width: 100%;
+    padding: 13px;
+    background-color: #0B1B3A;
+    border: 1px solid #5277A5;
+    border-radius: 7px;
+    color: #FFFFFF;
+    margin-bottom: 20px;
+}
+
+.scan-panel button {
+    background-color: #93C5FD;
+    color: #0B1B3A;
+    border: none;
+    padding: 13px 24px;
+    border-radius: 7px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.scan-panel button:hover {
+    background-color: #BFDBFE;
+}
+/* Security Overview Section */
+
+.overview {
+    margin-top: 35px;
+}
+
+.overview h2 {
+    color: #F5E6CC;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+/* Cards Layout */
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+/* Individual Cards */
+
+.card {
+    background-color: #16345F;
+    border: 1px solid #365985;
+    padding: 25px;
+    border-radius: 12px;
+    transition: transform 0.2s ease;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+}
+
+/* Card Heading */
+
+.card h3 {
+    color: #BFDBFE;
+    font-size: 15px;
+    margin-bottom: 15px;
+}
+
+/* Card Number */
+
+.card p {
+    color: #F5E6CC;
+    font-size: 32px;
+    font-weight: bold;
+}
+/* =================================
+   SCAN RESULTS TABLE
+================================= */
+
+.results {
+    margin-top: 35px;
+}
+
+.results h2 {
+    color: #F5E6CC;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.results > p {
+    color: #BFDBFE;
+    margin-bottom: 20px;
+}
+
+/* Table Container */
+
+.table-container {
+    width: 100%;
+    overflow-x: auto;
+    background-color: #16345F;
+    border: 1px solid #365985;
+    border-radius: 12px;
+}
+
+/* Table */
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+/* Table Heading */
+
+thead {
+    background-color: #254B7A;
+}
+
+th {
+    color: #BFDBFE;
+    padding: 16px;
+    font-size: 14px;
+}
+
+/* Table Data */
+
+td {
+    color: #F5E6CC;
+    padding: 16px;
+    border-top: 1px solid #365985;
+    font-size: 14px;
+}
+
+/* High Severity */
+
+.high {
+    background-color: #7F1D1D;
+    color: #FECACA;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+/* Medium Severity */
+
+.medium {
+    background-color: #78350F;
+    color: #FDE68A;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+/* Table Hover */
+
+tbody tr:hover {
+    background-color: #254B7A;
+}
+/* EVIDENCE PANEL */
+
+.evidence {
+    margin-top: 35px;
+}
+
+.evidence h2 {
+    color: #F5E6CC;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.section-description {
+    color: #BFDBFE;
+    margin-bottom: 20px;
+}
+
+.evidence-card {
+    background: #16345F;
+    border: 1px solid #365985;
+    border-radius: 12px;
+    padding: 22px;
+    margin-bottom: 20px;
+}
+
+.evidence-card h3 {
+    color: #BFDBFE;
+    margin-bottom: 18px;
+}
+
+.evidence-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    padding: 13px 0;
+    border-bottom: 1px solid #365985;
+    color: #F5E6CC;
+}
+
+.evidence-row strong {
+    color: #F5E6CC;
+    text-align: right;
+}
+
+.vulnerable {
+    color: #FCA5A5 !important;
+}
+
+.evidence-card pre {
+    background: #0B1B3A;
+    color: #BFDBFE;
+    padding: 18px;
+    border-radius: 8px;
+    overflow-x: auto;
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+    margin-bottom: 22px;
+    border: 1px solid #365985;
+}
+
+.evidence-card p {
+    color: #F5E6CC;
+    line-height: 1.7;
+}
+/* REGRESSION TESTING SECTION */
+
+.regression {
+    margin-top: 35px;
+}
+
+.regression h2 {
+    color: #F5E6CC;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.regression-card {
+    background-color: #16345F;
+    border: 1px solid #365985;
+    border-radius: 12px;
+    padding: 25px;
+    margin-bottom: 20px;
+}
+
+.regression-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.regression-header h3 {
+    color: #BFDBFE;
+    font-size: 18px;
+}
+
+.fixed-status {
+    background-color: #14532D;
+    color: #BBF7D0;
+    padding: 7px 13px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.regression-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    padding: 14px 0;
+    border-bottom: 1px solid #365985;
+    color: #F5E6CC;
+}
+
+.regression-row strong {
+    text-align: right;
+}
+
+.safe-status {
+    color: #86EFAC;
+}
+
+.regression-button {
+    margin-top: 22px;
+    background-color: #93C5FD;
+    color: #0B1B3A;
+    border: none;
+    padding: 13px 22px;
+    border-radius: 7px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.regression-button:hover {
+    background-color: #BFDBFE;
+}
+/* REGRESSION ALIGNMENT FIX */
+
+.regression-card {
+    width: 100%;
+    max-width: 850px;
+    overflow: hidden;
+}
+
+.regression-header {
+    flex-wrap: wrap;
+    align-items: flex-start;
+}
+
+.regression-row {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    align-items: start;
+    gap: 12px;
+}
+
+.regression-row span,
+.regression-row strong {
+    min-width: 0;
+    overflow-wrap: anywhere;
+}
+
+.regression-row strong {
+    text-align: right;
+}
+
+.regression-button {
+    max-width: 100%;
+    white-space: normal;
+}
+
+@media (max-width: 600px) {
+    .regression-row {
+        grid-template-columns: 1fr;
+        gap: 6px;
+    }
+
+    .regression-row strong {
+        text-align: left;
+    }
+}
+/* FIX SPACING BETWEEN DASHBOARD SECTIONS */
+
+.evidence {
+    display: block;
+    margin-top: 50px;
+    margin-bottom: 60px;
+    clear: both;
+}
+
+.regression {
+    display: block;
+    margin-top: 60px;
+    margin-bottom: 50px;
+    clear: both;
+}
+
+.evidence-card {
+    margin-bottom: 25px;
+}
+
+.regression-card {
+    margin-top: 20px;
+}
+/* ==============================
+   AURA-2.2 SCAN RESULTS
+============================== */
+
+.results-summary {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+    margin: 25px 0;
+}
+
+.result-card {
+    background: #172b46;
+    border: 1px solid #294564;
+    padding: 22px;
+    border-radius: 12px;
+    text-align: center;
+    transition: transform 0.2s ease;
+}
+
+.result-card:hover {
+    transform: translateY(-4px);
+}
+
+.result-card h3 {
+    color: #b8cce3;
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 12px;
+}
+
+.result-card p {
+    color: #65c8ff;
+    font-size: 30px;
+    font-weight: bold;
+    margin: 0;
+}
+
+/* Responsive layout */
+
+@media (max-width: 900px) {
+    .results-summary {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 500px) {
+    .results-summary {
+        grid-template-columns: 1fr;
+    }
+}
